@@ -24,7 +24,9 @@ df['UF'] = df['LOCAL'].str.extract(r'([A-Z]{2})')
 empresas = ['Hapvida', 'Ibyte', 'Nagem']
 ufs = df['UF'].unique()
 status = df['STATUS'].unique()
+total_reclamacoes=df['ID'].count()
 #--------------------------
+
 
 st.title("Reclamações")
 
@@ -36,6 +38,7 @@ qtd_palavras_select = st.sidebar.slider(
     min_value=0,
     max_value=20,
     value=(0, 20))
+st.metric(label="Total Reclamações", value=total_reclamacoes)
 #--------------------------
 
 import matplotlib.pyplot as plt
